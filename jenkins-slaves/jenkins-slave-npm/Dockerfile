@@ -23,9 +23,10 @@ RUN yum install -y centos-release-scl-rh && \
     yum clean all -y && \
     rm -rf /var/cache/yum
 
-RUN git config --global user.email "enablement@do500.com" && \
+RUN mkdir -p ~/.git && \
+    touch ~/.git/config && \
+    git config --global user.email "enablement@do500.com" && \
     git config --global user.name "enablement user" && \
     git config http.sslVerify false
-
 
 USER 1001
